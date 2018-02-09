@@ -1,0 +1,41 @@
+{
+  "name": "change-case-bundled",
+  "version": "1.0.0",
+  "description": "A browserify bundled web-friendly version of the change-case module.",
+  "main": "dist/change-case-bundled.min.js",
+  "scripts": {
+    "build": "gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nitro404/change-case-bundled.git"
+  },
+  "keywords": [
+    "change",
+    "case",
+    "bundled",
+    "browserify"
+  ],
+  "author": "Kevin Scroggins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nitro404/change-case-bundled/issues"
+  },
+  "homepage": "https://github.com/nitro404/change-case-bundled#readme",
+  "devDependencies": {
+    "browserify": "^16.0.0",
+    "change-case": "^3.0.1",
+    "glob": "^7.1.2",
+    "gulp": "^3.9.1",
+    "gulp-filter": "^5.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "pump": "^3.0.0",
+    "uglify-js": "^3.3.10",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  }
+}
