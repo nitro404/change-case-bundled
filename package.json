@@ -17,24 +17,28 @@
     "bundled",
     "browserify"
   ],
-  "author": "Kevin Scroggins",
+  "author": {
+    "name": "Kevin Scroggins"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/nitro404/change-case-bundled/issues"
   },
   "homepage": "https://github.com/nitro404/change-case-bundled#readme",
   "devDependencies": {
-    "browserify": "^16.0.0",
-    "change-case": "^3.0.1",
+    "browserify": "^16.2.2",
+    "chai": "^4.1.2",
+    "change-case": "^3.0.2",
     "glob": "^7.1.2",
     "gulp": "^3.9.1",
+    "gulp-fabricator": "^1.0.4",
     "gulp-filter": "^5.1.0",
-    "gulp-rename": "^1.2.2",
+    "gulp-rename": "^1.2.3",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
     "pump": "^3.0.0",
-    "uglify-js": "^3.3.10",
+    "uglify-js": "^3.4.0",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
   }
