@@ -3,7 +3,7 @@
 [![NPM version][npm-version-image]][npm-url]
 [![Build Status][build-status-image]][build-status-url]
 [![Coverage Status][coverage-image]][coverage-url]
-[![Known Vulnerabilities][snyk-image]][snyk-url]
+[![Known Vulnerabilities][vulnerabilities-image]][vulnerabilities-url]
 [![Downloads][npm-downloads-image]][npm-url]
 
 A browserify bundled web-friendly version of the [change-case](https://github.com/blakeembrey/change-case) module.
@@ -21,7 +21,7 @@ A browserify bundled web-friendly version of the [change-case](https://github.co
 ## Server-Side Usage
 
 ```javascript
-const changeCase = require("change-case-bundled");
+var changeCase = require("change-case-bundled");
 
 changeCase.camel("Nice Meme"); // => "niceMeme"
 ```
@@ -35,7 +35,7 @@ npm install change-case-bundled
 
 ## Building
 
-To build this module:
+To build the distribution files for this module:
 ```bash
 gulp build
 ```
@@ -54,5 +54,5 @@ npm run build
 [coverage-url]: https://coveralls.io/github/nitro404/change-case-bundled?branch=master
 [coverage-image]: https://coveralls.io/repos/github/nitro404/change-case-bundled/badge.svg?branch=master
 
-[snyk-url]: https://snyk.io/test/github/nitro404/change-case-bundled?targetFile=package.json
-[snyk-image]: https://snyk.io/test/github/nitro404/change-case-bundled/badge.svg?targetFile=package.json
+[vulnerabilities-url]: https://snyk.io/test/github/nitro404/change-case-bundled?targetFile=package.json
+[vulnerabilities-image]: https://snyk.io/test/github/nitro404/change-case-bundled/badge.svg?targetFile=package.json
