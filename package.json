@@ -33,6 +33,7 @@
     "browserify": "^16.2.2",
     "chai": "^4.1.2",
     "change-case": "^3.0.2",
+    "extra-utilities": "^1.2.14",
     "glob": "^7.1.2",
     "gulp": "^3.9.1",
     "gulp-fabricator": "^1.0.4",
