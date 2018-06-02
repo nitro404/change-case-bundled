@@ -5,7 +5,11 @@
   "main": "dist/change-case-bundled.min.js",
   "scripts": {
     "build": "gulp build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "gulp lint",
+    "test": "mocha",
+    "coverage": "gulp coverage",
+    "coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
+    "security": "gulp security"
   },
   "repository": {
     "type": "git",
