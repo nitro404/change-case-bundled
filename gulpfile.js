@@ -14,9 +14,6 @@ const fabricator = require("gulp-fabricator");
 
 fabricator.setup({
 	name: "Change Case",
-	js: {
-		source: ["src/change-case.js"]
-	},
 	base: {
 		directory: __dirname
 	}

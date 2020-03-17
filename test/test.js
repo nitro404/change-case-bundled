@@ -2,17 +2,38 @@
 
 global.utilities = undefined;
 
-var changeCaseBundled = require("../dist/change-case-bundled.js");
-var changeCase = require("change-case");
-var utilities = require("extra-utilities");
-var chai = require("chai");
-var expect = chai.expect;
+const changeCaseBundled = require("../dist/change-case-bundled.js");
+const changeCase = require("change-case");
+const utilities = require("extra-utilities");
+const chai = require("chai");
+const expect = chai.expect;
 
-var functionNames = [];
+const functionNames = [];
 
-var changeCaseAttributes = Object.keys(changeCase);
+const expectedFunctionNames = [
+	"camelCase",
+	"capitalCase",
+	"constantCase",
+	"dotCase",
+	"headerCase",
+	"lowerCase",
+	"lowerCaseFirst",
+	"noCase",
+	"paramCase",
+	"pascalCase",
+	"pathCase",
+	"sentenceCase",
+	"snakeCase",
+	"spongeCase",
+	"swapCase",
+	"titleCase",
+	"upperCase",
+	"upperCaseFirst"
+];
 
-for(var i = 0; i < changeCaseAttributes.length; i++) {
+const changeCaseAttributes = Object.keys(changeCase);
+
+for(let i = 0; i < changeCaseAttributes.length; i++) {
 	if(utilities.isFunction(changeCase[changeCaseAttributes[i]])) {
 		functionNames.push(changeCaseAttributes[i]);
 	}
@@ -20,8 +41,14 @@ for(var i = 0; i < changeCaseAttributes.length; i++) {
 
 describe("Change Case Bundled", function() {
 	it("should contain the same functions as the original module", function() {
-		for(var i = 0; i < functionNames.length; i++) {
-			expect(utilities.isFunction(changeCaseBundled[functionNames[i]])).to.equal(true);
+		for(let i = 0; i < functionNames.length; i++) {
+			expect(changeCaseBundled[functionNames[i]]).to.be.an.instanceof(Function);
+		}
+	});
+
+	it("should contain the expected set of functions from the original module", function() {
+		for(let i = 0; i < expectedFunctionNames.length; i++) {
+			expect(changeCaseBundled[expectedFunctionNames[i]]).to.be.an.instanceof(Function);
 		}
 	});
 });

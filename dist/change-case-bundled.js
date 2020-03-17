@@ -21,7 +21,7 @@ function camelCase(input, options) {
 }
 exports.camelCase = camelCase;
 
-},{"pascal-case":10,"tslib":14}],2:[function(require,module,exports){
+},{"pascal-case":11,"tslib":18}],2:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
@@ -37,7 +37,7 @@ function capitalCase(input, options) {
 }
 exports.capitalCase = capitalCase;
 
-},{"no-case":8,"tslib":14,"upper-case-first":15}],3:[function(require,module,exports){
+},{"no-case":9,"tslib":18,"upper-case-first":19}],3:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
@@ -53,7 +53,7 @@ tslib_1.__exportStar(require("path-case"), exports);
 tslib_1.__exportStar(require("sentence-case"), exports);
 tslib_1.__exportStar(require("snake-case"), exports);
 
-},{"camel-case":1,"capital-case":2,"constant-case":4,"dot-case":5,"header-case":6,"no-case":8,"param-case":9,"pascal-case":10,"path-case":11,"sentence-case":12,"snake-case":13,"tslib":14}],4:[function(require,module,exports){
+},{"camel-case":1,"capital-case":2,"constant-case":4,"dot-case":5,"header-case":6,"no-case":9,"param-case":10,"pascal-case":11,"path-case":12,"sentence-case":13,"snake-case":14,"tslib":18}],4:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
@@ -65,7 +65,7 @@ function constantCase(input, options) {
 }
 exports.constantCase = constantCase;
 
-},{"no-case":8,"tslib":14,"upper-case":16}],5:[function(require,module,exports){
+},{"no-case":9,"tslib":18,"upper-case":20}],5:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
@@ -76,7 +76,7 @@ function dotCase(input, options) {
 }
 exports.dotCase = dotCase;
 
-},{"no-case":8,"tslib":14}],6:[function(require,module,exports){
+},{"no-case":9,"tslib":18}],6:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
@@ -87,7 +87,18 @@ function headerCase(input, options) {
 }
 exports.headerCase = headerCase;
 
-},{"capital-case":2,"tslib":14}],7:[function(require,module,exports){
+},{"capital-case":2,"tslib":18}],7:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * Lower case the first character of an input string.
+ */
+function lowerCaseFirst(input) {
+    return input.charAt(0).toLowerCase() + input.substr(1);
+}
+exports.lowerCaseFirst = lowerCaseFirst;
+
+},{}],8:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
@@ -140,7 +151,7 @@ function lowerCase(str) {
 }
 exports.lowerCase = lowerCase;
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var lower_case_1 = require("lower-case");
@@ -179,7 +190,7 @@ function replace(input, re, value) {
     return re.reduce(function (input, re) { return input.replace(re, value); }, input);
 }
 
-},{"lower-case":7}],9:[function(require,module,exports){
+},{"lower-case":8}],10:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
@@ -190,7 +201,7 @@ function paramCase(input, options) {
 }
 exports.paramCase = paramCase;
 
-},{"dot-case":5,"tslib":14}],10:[function(require,module,exports){
+},{"dot-case":5,"tslib":18}],11:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
@@ -214,7 +225,7 @@ function pascalCase(input, options) {
 }
 exports.pascalCase = pascalCase;
 
-},{"no-case":8,"tslib":14}],11:[function(require,module,exports){
+},{"no-case":9,"tslib":18}],12:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
@@ -225,7 +236,7 @@ function pathCase(input, options) {
 }
 exports.pathCase = pathCase;
 
-},{"dot-case":5,"tslib":14}],12:[function(require,module,exports){
+},{"dot-case":5,"tslib":18}],13:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
@@ -244,7 +255,7 @@ function sentenceCase(input, options) {
 }
 exports.sentenceCase = sentenceCase;
 
-},{"no-case":8,"tslib":14,"upper-case-first":15}],13:[function(require,module,exports){
+},{"no-case":9,"tslib":18,"upper-case-first":19}],14:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
@@ -255,7 +266,67 @@ function snakeCase(input, options) {
 }
 exports.snakeCase = snakeCase;
 
-},{"dot-case":5,"tslib":14}],14:[function(require,module,exports){
+},{"dot-case":5,"tslib":18}],15:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+function spongeCase(input) {
+    var result = "";
+    for (var i = 0; i < input.length; i++) {
+        result +=
+            Math.random() > 0.5 ? input[i].toUpperCase() : input[i].toLowerCase();
+    }
+    return result;
+}
+exports.spongeCase = spongeCase;
+
+},{}],16:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+function swapCase(input) {
+    var result = "";
+    for (var i = 0; i < input.length; i++) {
+        var lower = input[i].toLowerCase();
+        result += input[i] === lower ? input[i].toUpperCase() : lower;
+    }
+    return result;
+}
+exports.swapCase = swapCase;
+
+},{}],17:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var SMALL_WORDS = /\b(?:an?d?|a[st]|because|but|by|en|for|i[fn]|neither|nor|o[fnr]|only|over|per|so|some|tha[tn]|the|to|up|upon|vs?\.?|versus|via|when|with|without|yet)\b/i;
+var TOKENS = /[^\s:–—-]+|./g;
+var WHITESPACE = /\s/;
+var IS_MANUAL_CASE = /.(?=[A-Z]|\..)/;
+var ALPHANUMERIC_PATTERN = /[A-Za-z0-9\u00C0-\u00FF]/;
+function titleCase(input) {
+    var result = "";
+    var m;
+    // tslint:disable-next-line
+    while ((m = TOKENS.exec(input)) !== null) {
+        var token = m[0], index = m.index;
+        if (
+        // Ignore already capitalized words.
+        !IS_MANUAL_CASE.test(token) &&
+            // Ignore small words except at beginning or end.
+            (!SMALL_WORDS.test(token) ||
+                index === 0 ||
+                index + token.length === input.length) &&
+            // Ignore URLs.
+            (input.charAt(index + token.length) !== ":" ||
+                WHITESPACE.test(input.charAt(index + token.length + 1)))) {
+            // Find and uppercase first word character, skips over *modifiers*.
+            result += token.replace(ALPHANUMERIC_PATTERN, function (m) { return m.toUpperCase(); });
+            continue;
+        }
+        result += token;
+    }
+    return result;
+}
+exports.titleCase = titleCase;
+
+},{}],18:[function(require,module,exports){
 (function (global){
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
@@ -536,7 +607,7 @@ var __classPrivateFieldSet;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],15:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
@@ -547,7 +618,7 @@ function upperCaseFirst(input) {
 }
 exports.upperCaseFirst = upperCaseFirst;
 
-},{}],16:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
@@ -596,12 +667,21 @@ function upperCase(str) {
 }
 exports.upperCase = upperCase;
 
-},{}],17:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 "use strict";
 
-module.exports = require("change-case");
+var changeCase = require("change-case");
+changeCase.titleCase = require("title-case").titleCase;
+changeCase.swapCase = require("swap-case").swapCase;
+changeCase.lowerCase = require("lower-case").lowerCase;
+changeCase.lowerCaseFirst = require("lower-case-first").lowerCaseFirst;
+changeCase.upperCase = require("upper-case").upperCase;
+changeCase.upperCaseFirst = require("upper-case-first").upperCaseFirst;
+changeCase.spongeCase = require("sponge-case").spongeCase;
 
-},{"change-case":3}]},{},[17])(17)
+module.exports = changeCase;
+
+},{"change-case":3,"lower-case":8,"lower-case-first":7,"sponge-case":15,"swap-case":16,"title-case":17,"upper-case":20,"upper-case-first":19}]},{},[21])(21)
 });
 
 //# sourceMappingURL=change-case-bundled.js.map
