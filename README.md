@@ -14,7 +14,7 @@ A browserify bundled web-friendly version of the [change-case](https://github.co
 <script src="change-case-bundled.min.js"></script>
 
 <script type="text/javascript">
-	changeCase.camel("Nice Meme"); // => "niceMeme"
+	changeCase.camelCase("Nice Meme"); // => "niceMeme"
 </script>
 ```
 
@@ -23,7 +23,7 @@ A browserify bundled web-friendly version of the [change-case](https://github.co
 ```javascript
 var changeCase = require("change-case-bundled");
 
-changeCase.camel("Nice Meme"); // => "niceMeme"
+changeCase.camelCase("Door Stuck"); // => "doorStuck"
 ```
 
 ## Installation
