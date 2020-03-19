@@ -21,7 +21,7 @@ A browserify bundled web-friendly version of the [change-case](https://github.co
 ## Server-Side Usage
 
 ```javascript
-var changeCase = require("change-case-bundled");
+const changeCase = require("change-case-bundled");
 
 changeCase.camelCase("Door Stuck"); // => "doorStuck"
 ```
