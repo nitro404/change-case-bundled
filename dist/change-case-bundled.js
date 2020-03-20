@@ -1,106 +1,331 @@
-(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.changeCase = f()}})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["changeCase"] = factory();
+	else
+		root["changeCase"] = factory();
+})(window, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/change-case.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./node_modules/camel-case/dist.es2015/index.js":
+/*!******************************************************!*\
+  !*** ./node_modules/camel-case/dist.es2015/index.js ***!
+  \******************************************************/
+/*! exports provided: camelCaseTransform, camelCaseTransformMerge, camelCase */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = require("tslib");
-var pascal_case_1 = require("pascal-case");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "camelCaseTransform", function() { return camelCaseTransform; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "camelCaseTransformMerge", function() { return camelCaseTransformMerge; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "camelCase", function() { return camelCase; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var pascal_case__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! pascal-case */ "./node_modules/pascal-case/dist.es2015/index.js");
+
+
 function camelCaseTransform(input, index) {
     if (index === 0)
         return input.toLowerCase();
-    return pascal_case_1.pascalCaseTransform(input, index);
+    return Object(pascal_case__WEBPACK_IMPORTED_MODULE_1__["pascalCaseTransform"])(input, index);
 }
-exports.camelCaseTransform = camelCaseTransform;
 function camelCaseTransformMerge(input, index) {
     if (index === 0)
         return input.toLowerCase();
-    return pascal_case_1.pascalCaseTransformMerge(input);
+    return Object(pascal_case__WEBPACK_IMPORTED_MODULE_1__["pascalCaseTransformMerge"])(input);
 }
-exports.camelCaseTransformMerge = camelCaseTransformMerge;
 function camelCase(input, options) {
     if (options === void 0) { options = {}; }
-    return pascal_case_1.pascalCase(input, tslib_1.__assign({ transform: camelCaseTransform }, options));
+    return Object(pascal_case__WEBPACK_IMPORTED_MODULE_1__["pascalCase"])(input, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ transform: camelCaseTransform }, options));
 }
-exports.camelCase = camelCase;
+//# sourceMappingURL=index.js.map
 
-},{"pascal-case":11,"tslib":18}],2:[function(require,module,exports){
+/***/ }),
+
+/***/ "./node_modules/capital-case/dist.es2015/index.js":
+/*!********************************************************!*\
+  !*** ./node_modules/capital-case/dist.es2015/index.js ***!
+  \********************************************************/
+/*! exports provided: capitalCaseTransform, capitalCase */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = require("tslib");
-var no_case_1 = require("no-case");
-var upper_case_first_1 = require("upper-case-first");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "capitalCaseTransform", function() { return capitalCaseTransform; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "capitalCase", function() { return capitalCase; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var no_case__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! no-case */ "./node_modules/no-case/dist.es2015/index.js");
+/* harmony import */ var upper_case_first__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! upper-case-first */ "./node_modules/upper-case-first/dist.es2015/index.js");
+
+
+
 function capitalCaseTransform(input) {
-    return upper_case_first_1.upperCaseFirst(input.toLowerCase());
+    return Object(upper_case_first__WEBPACK_IMPORTED_MODULE_2__["upperCaseFirst"])(input.toLowerCase());
 }
-exports.capitalCaseTransform = capitalCaseTransform;
 function capitalCase(input, options) {
     if (options === void 0) { options = {}; }
-    return no_case_1.noCase(input, tslib_1.__assign({ delimiter: " ", transform: capitalCaseTransform }, options));
+    return Object(no_case__WEBPACK_IMPORTED_MODULE_1__["noCase"])(input, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ delimiter: " ", transform: capitalCaseTransform }, options));
 }
-exports.capitalCase = capitalCase;
+//# sourceMappingURL=index.js.map
 
-},{"no-case":9,"tslib":18,"upper-case-first":19}],3:[function(require,module,exports){
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = require("tslib");
-tslib_1.__exportStar(require("camel-case"), exports);
-tslib_1.__exportStar(require("capital-case"), exports);
-tslib_1.__exportStar(require("constant-case"), exports);
-tslib_1.__exportStar(require("dot-case"), exports);
-tslib_1.__exportStar(require("header-case"), exports);
-tslib_1.__exportStar(require("no-case"), exports);
-tslib_1.__exportStar(require("param-case"), exports);
-tslib_1.__exportStar(require("pascal-case"), exports);
-tslib_1.__exportStar(require("path-case"), exports);
-tslib_1.__exportStar(require("sentence-case"), exports);
-tslib_1.__exportStar(require("snake-case"), exports);
+/***/ }),
 
-},{"camel-case":1,"capital-case":2,"constant-case":4,"dot-case":5,"header-case":6,"no-case":9,"param-case":10,"pascal-case":11,"path-case":12,"sentence-case":13,"snake-case":14,"tslib":18}],4:[function(require,module,exports){
+/***/ "./node_modules/change-case/dist.es2015/index.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/change-case/dist.es2015/index.js ***!
+  \*******************************************************/
+/*! exports provided: camelCaseTransform, camelCaseTransformMerge, camelCase, capitalCaseTransform, capitalCase, constantCase, dotCase, headerCase, noCase, paramCase, pascalCaseTransform, pascalCaseTransformMerge, pascalCase, pathCase, sentenceCaseTransform, sentenceCase, snakeCase */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = require("tslib");
-var no_case_1 = require("no-case");
-var upper_case_1 = require("upper-case");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var camel_case__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! camel-case */ "./node_modules/camel-case/dist.es2015/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "camelCaseTransform", function() { return camel_case__WEBPACK_IMPORTED_MODULE_0__["camelCaseTransform"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "camelCaseTransformMerge", function() { return camel_case__WEBPACK_IMPORTED_MODULE_0__["camelCaseTransformMerge"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "camelCase", function() { return camel_case__WEBPACK_IMPORTED_MODULE_0__["camelCase"]; });
+
+/* harmony import */ var capital_case__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! capital-case */ "./node_modules/capital-case/dist.es2015/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "capitalCaseTransform", function() { return capital_case__WEBPACK_IMPORTED_MODULE_1__["capitalCaseTransform"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "capitalCase", function() { return capital_case__WEBPACK_IMPORTED_MODULE_1__["capitalCase"]; });
+
+/* harmony import */ var constant_case__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! constant-case */ "./node_modules/constant-case/dist.es2015/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "constantCase", function() { return constant_case__WEBPACK_IMPORTED_MODULE_2__["constantCase"]; });
+
+/* harmony import */ var dot_case__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! dot-case */ "./node_modules/dot-case/dist.es2015/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "dotCase", function() { return dot_case__WEBPACK_IMPORTED_MODULE_3__["dotCase"]; });
+
+/* harmony import */ var header_case__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! header-case */ "./node_modules/header-case/dist.es2015/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "headerCase", function() { return header_case__WEBPACK_IMPORTED_MODULE_4__["headerCase"]; });
+
+/* harmony import */ var no_case__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! no-case */ "./node_modules/no-case/dist.es2015/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "noCase", function() { return no_case__WEBPACK_IMPORTED_MODULE_5__["noCase"]; });
+
+/* harmony import */ var param_case__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! param-case */ "./node_modules/param-case/dist.es2015/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "paramCase", function() { return param_case__WEBPACK_IMPORTED_MODULE_6__["paramCase"]; });
+
+/* harmony import */ var pascal_case__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! pascal-case */ "./node_modules/pascal-case/dist.es2015/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "pascalCaseTransform", function() { return pascal_case__WEBPACK_IMPORTED_MODULE_7__["pascalCaseTransform"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "pascalCaseTransformMerge", function() { return pascal_case__WEBPACK_IMPORTED_MODULE_7__["pascalCaseTransformMerge"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "pascalCase", function() { return pascal_case__WEBPACK_IMPORTED_MODULE_7__["pascalCase"]; });
+
+/* harmony import */ var path_case__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! path-case */ "./node_modules/path-case/dist.es2015/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "pathCase", function() { return path_case__WEBPACK_IMPORTED_MODULE_8__["pathCase"]; });
+
+/* harmony import */ var sentence_case__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! sentence-case */ "./node_modules/sentence-case/dist.es2015/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "sentenceCaseTransform", function() { return sentence_case__WEBPACK_IMPORTED_MODULE_9__["sentenceCaseTransform"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "sentenceCase", function() { return sentence_case__WEBPACK_IMPORTED_MODULE_9__["sentenceCase"]; });
+
+/* harmony import */ var snake_case__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! snake-case */ "./node_modules/snake-case/dist.es2015/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "snakeCase", function() { return snake_case__WEBPACK_IMPORTED_MODULE_10__["snakeCase"]; });
+
+
+
+
+
+
+
+
+
+
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/constant-case/dist.es2015/index.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/constant-case/dist.es2015/index.js ***!
+  \*********************************************************/
+/*! exports provided: constantCase */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "constantCase", function() { return constantCase; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var no_case__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! no-case */ "./node_modules/no-case/dist.es2015/index.js");
+/* harmony import */ var upper_case__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! upper-case */ "./node_modules/upper-case/dist.es2015/index.js");
+
+
+
 function constantCase(input, options) {
     if (options === void 0) { options = {}; }
-    return no_case_1.noCase(input, tslib_1.__assign({ delimiter: "_", transform: upper_case_1.upperCase }, options));
+    return Object(no_case__WEBPACK_IMPORTED_MODULE_1__["noCase"])(input, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ delimiter: "_", transform: upper_case__WEBPACK_IMPORTED_MODULE_2__["upperCase"] }, options));
 }
-exports.constantCase = constantCase;
+//# sourceMappingURL=index.js.map
 
-},{"no-case":9,"tslib":18,"upper-case":20}],5:[function(require,module,exports){
+/***/ }),
+
+/***/ "./node_modules/dot-case/dist.es2015/index.js":
+/*!****************************************************!*\
+  !*** ./node_modules/dot-case/dist.es2015/index.js ***!
+  \****************************************************/
+/*! exports provided: dotCase */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = require("tslib");
-var no_case_1 = require("no-case");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dotCase", function() { return dotCase; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var no_case__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! no-case */ "./node_modules/no-case/dist.es2015/index.js");
+
+
 function dotCase(input, options) {
     if (options === void 0) { options = {}; }
-    return no_case_1.noCase(input, tslib_1.__assign({ delimiter: "." }, options));
+    return Object(no_case__WEBPACK_IMPORTED_MODULE_1__["noCase"])(input, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ delimiter: "." }, options));
 }
-exports.dotCase = dotCase;
+//# sourceMappingURL=index.js.map
 
-},{"no-case":9,"tslib":18}],6:[function(require,module,exports){
+/***/ }),
+
+/***/ "./node_modules/header-case/dist.es2015/index.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/header-case/dist.es2015/index.js ***!
+  \*******************************************************/
+/*! exports provided: headerCase */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = require("tslib");
-var capital_case_1 = require("capital-case");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerCase", function() { return headerCase; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var capital_case__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! capital-case */ "./node_modules/capital-case/dist.es2015/index.js");
+
+
 function headerCase(input, options) {
     if (options === void 0) { options = {}; }
-    return capital_case_1.capitalCase(input, tslib_1.__assign({ delimiter: "-" }, options));
+    return Object(capital_case__WEBPACK_IMPORTED_MODULE_1__["capitalCase"])(input, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ delimiter: "-" }, options));
 }
-exports.headerCase = headerCase;
+//# sourceMappingURL=index.js.map
 
-},{"capital-case":2,"tslib":18}],7:[function(require,module,exports){
+/***/ }),
+
+/***/ "./node_modules/lower-case-first/dist.es2015/index.js":
+/*!************************************************************!*\
+  !*** ./node_modules/lower-case-first/dist.es2015/index.js ***!
+  \************************************************************/
+/*! exports provided: lowerCaseFirst */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lowerCaseFirst", function() { return lowerCaseFirst; });
 /**
  * Lower case the first character of an input string.
  */
 function lowerCaseFirst(input) {
     return input.charAt(0).toLowerCase() + input.substr(1);
 }
-exports.lowerCaseFirst = lowerCaseFirst;
+//# sourceMappingURL=index.js.map
 
-},{}],8:[function(require,module,exports){
+/***/ }),
+
+/***/ "./node_modules/lower-case/dist.es2015/index.js":
+/*!******************************************************!*\
+  !*** ./node_modules/lower-case/dist.es2015/index.js ***!
+  \******************************************************/
+/*! exports provided: localeLowerCase, lowerCase */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "localeLowerCase", function() { return localeLowerCase; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lowerCase", function() { return lowerCase; });
 /**
  * Source: ftp://ftp.unicode.org/Public/UCD/latest/ucd/SpecialCasing.txt
  */
@@ -142,19 +367,28 @@ function localeLowerCase(str, locale) {
         return lowerCase(str.replace(lang.regexp, function (m) { return lang.map[m]; }));
     return lowerCase(str);
 }
-exports.localeLowerCase = localeLowerCase;
 /**
  * Lower case as a function.
  */
 function lowerCase(str) {
     return str.toLowerCase();
 }
-exports.lowerCase = lowerCase;
+//# sourceMappingURL=index.js.map
 
-},{}],9:[function(require,module,exports){
+/***/ }),
+
+/***/ "./node_modules/no-case/dist.es2015/index.js":
+/*!***************************************************!*\
+  !*** ./node_modules/no-case/dist.es2015/index.js ***!
+  \***************************************************/
+/*! exports provided: noCase */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var lower_case_1 = require("lower-case");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "noCase", function() { return noCase; });
+/* harmony import */ var lower_case__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lower-case */ "./node_modules/lower-case/dist.es2015/index.js");
+
 // Support camel case ("camelCase" -> "camel Case" and "CAMELCase" -> "CAMEL Case").
 var DEFAULT_SPLIT_REGEXP = [/([a-z0-9])([A-Z])/g, /([A-Z])([A-Z][a-z])/g];
 // Remove all non-word characters.
@@ -164,7 +398,7 @@ var DEFAULT_STRIP_REGEXP = /[^A-Z0-9]+/gi;
  */
 function noCase(input, options) {
     if (options === void 0) { options = {}; }
-    var _a = options.splitRegexp, splitRegexp = _a === void 0 ? DEFAULT_SPLIT_REGEXP : _a, _b = options.stripRegexp, stripRegexp = _b === void 0 ? DEFAULT_STRIP_REGEXP : _b, _c = options.transform, transform = _c === void 0 ? lower_case_1.lowerCase : _c, _d = options.delimiter, delimiter = _d === void 0 ? " " : _d;
+    var _a = options.splitRegexp, splitRegexp = _a === void 0 ? DEFAULT_SPLIT_REGEXP : _a, _b = options.stripRegexp, stripRegexp = _b === void 0 ? DEFAULT_STRIP_REGEXP : _b, _c = options.transform, transform = _c === void 0 ? lower_case__WEBPACK_IMPORTED_MODULE_0__["lowerCase"] : _c, _d = options.delimiter, delimiter = _d === void 0 ? " " : _d;
     var result = replace(replace(input, splitRegexp, "$1\0$2"), stripRegexp, "\0");
     var start = 0;
     var end = result.length;
@@ -180,7 +414,6 @@ function noCase(input, options) {
         .map(transform)
         .join(delimiter);
 }
-exports.noCase = noCase;
 /**
  * Replace `re` in the input string with the replacement value.
  */
@@ -189,23 +422,48 @@ function replace(input, re, value) {
         return input.replace(re, value);
     return re.reduce(function (input, re) { return input.replace(re, value); }, input);
 }
+//# sourceMappingURL=index.js.map
 
-},{"lower-case":8}],10:[function(require,module,exports){
+/***/ }),
+
+/***/ "./node_modules/param-case/dist.es2015/index.js":
+/*!******************************************************!*\
+  !*** ./node_modules/param-case/dist.es2015/index.js ***!
+  \******************************************************/
+/*! exports provided: paramCase */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = require("tslib");
-var dot_case_1 = require("dot-case");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "paramCase", function() { return paramCase; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var dot_case__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! dot-case */ "./node_modules/dot-case/dist.es2015/index.js");
+
+
 function paramCase(input, options) {
     if (options === void 0) { options = {}; }
-    return dot_case_1.dotCase(input, tslib_1.__assign({ delimiter: "-" }, options));
+    return Object(dot_case__WEBPACK_IMPORTED_MODULE_1__["dotCase"])(input, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ delimiter: "-" }, options));
 }
-exports.paramCase = paramCase;
+//# sourceMappingURL=index.js.map
 
-},{"dot-case":5,"tslib":18}],11:[function(require,module,exports){
+/***/ }),
+
+/***/ "./node_modules/pascal-case/dist.es2015/index.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/pascal-case/dist.es2015/index.js ***!
+  \*******************************************************/
+/*! exports provided: pascalCaseTransform, pascalCaseTransformMerge, pascalCase */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = require("tslib");
-var no_case_1 = require("no-case");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pascalCaseTransform", function() { return pascalCaseTransform; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pascalCaseTransformMerge", function() { return pascalCaseTransformMerge; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pascalCase", function() { return pascalCase; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var no_case__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! no-case */ "./node_modules/no-case/dist.es2015/index.js");
+
+
 function pascalCaseTransform(input, index) {
     var firstChar = input.charAt(0);
     var lowerChars = input.substr(1).toLowerCase();
@@ -214,61 +472,102 @@ function pascalCaseTransform(input, index) {
     }
     return "" + firstChar.toUpperCase() + lowerChars;
 }
-exports.pascalCaseTransform = pascalCaseTransform;
 function pascalCaseTransformMerge(input) {
     return input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
 }
-exports.pascalCaseTransformMerge = pascalCaseTransformMerge;
 function pascalCase(input, options) {
     if (options === void 0) { options = {}; }
-    return no_case_1.noCase(input, tslib_1.__assign({ delimiter: "", transform: pascalCaseTransform }, options));
+    return Object(no_case__WEBPACK_IMPORTED_MODULE_1__["noCase"])(input, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ delimiter: "", transform: pascalCaseTransform }, options));
 }
-exports.pascalCase = pascalCase;
+//# sourceMappingURL=index.js.map
 
-},{"no-case":9,"tslib":18}],12:[function(require,module,exports){
+/***/ }),
+
+/***/ "./node_modules/path-case/dist.es2015/index.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/path-case/dist.es2015/index.js ***!
+  \*****************************************************/
+/*! exports provided: pathCase */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = require("tslib");
-var dot_case_1 = require("dot-case");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pathCase", function() { return pathCase; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var dot_case__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! dot-case */ "./node_modules/dot-case/dist.es2015/index.js");
+
+
 function pathCase(input, options) {
     if (options === void 0) { options = {}; }
-    return dot_case_1.dotCase(input, tslib_1.__assign({ delimiter: "/" }, options));
+    return Object(dot_case__WEBPACK_IMPORTED_MODULE_1__["dotCase"])(input, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ delimiter: "/" }, options));
 }
-exports.pathCase = pathCase;
+//# sourceMappingURL=index.js.map
 
-},{"dot-case":5,"tslib":18}],13:[function(require,module,exports){
+/***/ }),
+
+/***/ "./node_modules/sentence-case/dist.es2015/index.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/sentence-case/dist.es2015/index.js ***!
+  \*********************************************************/
+/*! exports provided: sentenceCaseTransform, sentenceCase */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = require("tslib");
-var no_case_1 = require("no-case");
-var upper_case_first_1 = require("upper-case-first");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sentenceCaseTransform", function() { return sentenceCaseTransform; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sentenceCase", function() { return sentenceCase; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var no_case__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! no-case */ "./node_modules/no-case/dist.es2015/index.js");
+/* harmony import */ var upper_case_first__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! upper-case-first */ "./node_modules/upper-case-first/dist.es2015/index.js");
+
+
+
 function sentenceCaseTransform(input, index) {
     var result = input.toLowerCase();
     if (index === 0)
-        return upper_case_first_1.upperCaseFirst(result);
+        return Object(upper_case_first__WEBPACK_IMPORTED_MODULE_2__["upperCaseFirst"])(result);
     return result;
 }
-exports.sentenceCaseTransform = sentenceCaseTransform;
 function sentenceCase(input, options) {
     if (options === void 0) { options = {}; }
-    return no_case_1.noCase(input, tslib_1.__assign({ delimiter: " ", transform: sentenceCaseTransform }, options));
+    return Object(no_case__WEBPACK_IMPORTED_MODULE_1__["noCase"])(input, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ delimiter: " ", transform: sentenceCaseTransform }, options));
 }
-exports.sentenceCase = sentenceCase;
+//# sourceMappingURL=index.js.map
 
-},{"no-case":9,"tslib":18,"upper-case-first":19}],14:[function(require,module,exports){
+/***/ }),
+
+/***/ "./node_modules/snake-case/dist.es2015/index.js":
+/*!******************************************************!*\
+  !*** ./node_modules/snake-case/dist.es2015/index.js ***!
+  \******************************************************/
+/*! exports provided: snakeCase */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = require("tslib");
-var dot_case_1 = require("dot-case");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "snakeCase", function() { return snakeCase; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var dot_case__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! dot-case */ "./node_modules/dot-case/dist.es2015/index.js");
+
+
 function snakeCase(input, options) {
     if (options === void 0) { options = {}; }
-    return dot_case_1.dotCase(input, tslib_1.__assign({ delimiter: "_" }, options));
+    return Object(dot_case__WEBPACK_IMPORTED_MODULE_1__["dotCase"])(input, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ delimiter: "_" }, options));
 }
-exports.snakeCase = snakeCase;
+//# sourceMappingURL=index.js.map
 
-},{"dot-case":5,"tslib":18}],15:[function(require,module,exports){
+/***/ }),
+
+/***/ "./node_modules/sponge-case/dist.es2015/index.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/sponge-case/dist.es2015/index.js ***!
+  \*******************************************************/
+/*! exports provided: spongeCase */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "spongeCase", function() { return spongeCase; });
 function spongeCase(input) {
     var result = "";
     for (var i = 0; i < input.length; i++) {
@@ -277,11 +576,20 @@ function spongeCase(input) {
     }
     return result;
 }
-exports.spongeCase = spongeCase;
+//# sourceMappingURL=index.js.map
 
-},{}],16:[function(require,module,exports){
+/***/ }),
+
+/***/ "./node_modules/swap-case/dist.es2015/index.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/swap-case/dist.es2015/index.js ***!
+  \*****************************************************/
+/*! exports provided: swapCase */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "swapCase", function() { return swapCase; });
 function swapCase(input) {
     var result = "";
     for (var i = 0; i < input.length; i++) {
@@ -290,11 +598,20 @@ function swapCase(input) {
     }
     return result;
 }
-exports.swapCase = swapCase;
+//# sourceMappingURL=index.js.map
 
-},{}],17:[function(require,module,exports){
+/***/ }),
+
+/***/ "./node_modules/title-case/dist.es2015/index.js":
+/*!******************************************************!*\
+  !*** ./node_modules/title-case/dist.es2015/index.js ***!
+  \******************************************************/
+/*! exports provided: titleCase */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "titleCase", function() { return titleCase; });
 var SMALL_WORDS = /\b(?:an?d?|a[st]|because|but|by|en|for|i[fn]|neither|nor|o[fnr]|only|over|per|so|some|tha[tn]|the|to|up|upon|vs?\.?|versus|via|when|with|without|yet)\b/i;
 var TOKENS = /[^\s:–—-]+|./g;
 var WHITESPACE = /\s/;
@@ -324,10 +641,41 @@ function titleCase(input) {
     }
     return result;
 }
-exports.titleCase = titleCase;
+//# sourceMappingURL=index.js.map
 
-},{}],18:[function(require,module,exports){
-(function (global){
+/***/ }),
+
+/***/ "./node_modules/tslib/tslib.es6.js":
+/*!*****************************************!*\
+  !*** ./node_modules/tslib/tslib.es6.js ***!
+  \*****************************************/
+/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__extends", function() { return __extends; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__assign", function() { return __assign; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__rest", function() { return __rest; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__decorate", function() { return __decorate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__param", function() { return __param; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function() { return __metadata; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function() { return __awaiter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function() { return __generator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function() { return __exportStar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spread", function() { return __spread; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArrays", function() { return __spreadArrays; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__await", function() { return __await; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function() { return __asyncGenerator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function() { return __asyncDelegator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncValues", function() { return __asyncValues; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function() { return __makeTemplateObject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function() { return __importStar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function() { return __importDefault; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldGet", function() { return __classPrivateFieldGet; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldSet", function() { return __classPrivateFieldSet; });
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
@@ -342,285 +690,240 @@ MERCHANTABLITY OR NON-INFRINGEMENT.
 See the Apache Version 2.0 License for specific language governing permissions
 and limitations under the License.
 ***************************************************************************** */
-/* global global, define, System, Reflect, Promise */
-var __extends;
-var __assign;
-var __rest;
-var __decorate;
-var __param;
-var __metadata;
-var __awaiter;
-var __generator;
-var __exportStar;
-var __values;
-var __read;
-var __spread;
-var __spreadArrays;
-var __await;
-var __asyncGenerator;
-var __asyncDelegator;
-var __asyncValues;
-var __makeTemplateObject;
-var __importStar;
-var __importDefault;
-var __classPrivateFieldGet;
-var __classPrivateFieldSet;
-(function (factory) {
-    var root = typeof global === "object" ? global : typeof self === "object" ? self : typeof this === "object" ? this : {};
-    if (typeof define === "function" && define.amd) {
-        define("tslib", ["exports"], function (exports) { factory(createExporter(root, createExporter(exports))); });
-    }
-    else if (typeof module === "object" && typeof module.exports === "object") {
-        factory(createExporter(root, createExporter(module.exports)));
-    }
-    else {
-        factory(createExporter(root));
-    }
-    function createExporter(exports, previous) {
-        if (exports !== root) {
-            if (typeof Object.create === "function") {
-                Object.defineProperty(exports, "__esModule", { value: true });
-            }
-            else {
-                exports.__esModule = true;
-            }
-        }
-        return function (id, v) { return exports[id] = previous ? previous(id, v) : v; };
-    }
-})
-(function (exporter) {
-    var extendStatics = Object.setPrototypeOf ||
+/* global Reflect, Promise */
+
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
         function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
 
-    __extends = function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
+function __extends(d, b) {
+    extendStatics(d, b);
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
 
-    __assign = Object.assign || function (t) {
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
             s = arguments[i];
             for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
         }
         return t;
-    };
-
-    __rest = function (s, e) {
-        var t = {};
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-            t[p] = s[p];
-        if (s != null && typeof Object.getOwnPropertySymbols === "function")
-            for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-                if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                    t[p[i]] = s[p[i]];
-            }
-        return t;
-    };
-
-    __decorate = function (decorators, target, key, desc) {
-        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-        return c > 3 && r && Object.defineProperty(target, key, r), r;
-    };
-
-    __param = function (paramIndex, decorator) {
-        return function (target, key) { decorator(target, key, paramIndex); }
-    };
-
-    __metadata = function (metadataKey, metadataValue) {
-        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
-    };
-
-    __awaiter = function (thisArg, _arguments, P, generator) {
-        function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-        return new (P || (P = Promise))(function (resolve, reject) {
-            function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-            function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-            function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-            step((generator = generator.apply(thisArg, _arguments || [])).next());
-        });
-    };
-
-    __generator = function (thisArg, body) {
-        var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-        return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-        function verb(n) { return function (v) { return step([n, v]); }; }
-        function step(op) {
-            if (f) throw new TypeError("Generator is already executing.");
-            while (_) try {
-                if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-                if (y = 0, t) op = [op[0] & 2, t.value];
-                switch (op[0]) {
-                    case 0: case 1: t = op; break;
-                    case 4: _.label++; return { value: op[1], done: false };
-                    case 5: _.label++; y = op[1]; op = [0]; continue;
-                    case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                    default:
-                        if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                        if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                        if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                        if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                        if (t[2]) _.ops.pop();
-                        _.trys.pop(); continue;
-                }
-                op = body.call(thisArg, _);
-            } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-            if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-        }
-    };
-
-    __exportStar = function (m, exports) {
-        for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-    };
-
-    __values = function (o) {
-        var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
-        if (m) return m.call(o);
-        if (o && typeof o.length === "number") return {
-            next: function () {
-                if (o && i >= o.length) o = void 0;
-                return { value: o && o[i++], done: !o };
-            }
-        };
-        throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
-    };
-
-    __read = function (o, n) {
-        var m = typeof Symbol === "function" && o[Symbol.iterator];
-        if (!m) return o;
-        var i = m.call(o), r, ar = [], e;
-        try {
-            while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-        }
-        catch (error) { e = { error: error }; }
-        finally {
-            try {
-                if (r && !r.done && (m = i["return"])) m.call(i);
-            }
-            finally { if (e) throw e.error; }
-        }
-        return ar;
-    };
-
-    __spread = function () {
-        for (var ar = [], i = 0; i < arguments.length; i++)
-            ar = ar.concat(__read(arguments[i]));
-        return ar;
-    };
-
-    __spreadArrays = function () {
-        for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-        for (var r = Array(s), k = 0, i = 0; i < il; i++)
-            for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-                r[k] = a[j];
-        return r;
-    };
-
-    __await = function (v) {
-        return this instanceof __await ? (this.v = v, this) : new __await(v);
-    };
-
-    __asyncGenerator = function (thisArg, _arguments, generator) {
-        if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-        var g = generator.apply(thisArg, _arguments || []), i, q = [];
-        return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
-        function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
-        function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
-        function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r);  }
-        function fulfill(value) { resume("next", value); }
-        function reject(value) { resume("throw", value); }
-        function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
-    };
-
-    __asyncDelegator = function (o) {
-        var i, p;
-        return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
-        function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
-    };
-
-    __asyncValues = function (o) {
-        if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-        var m = o[Symbol.asyncIterator], i;
-        return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
-        function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
-        function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
-    };
-
-    __makeTemplateObject = function (cooked, raw) {
-        if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-        return cooked;
-    };
-
-    __importStar = function (mod) {
-        if (mod && mod.__esModule) return mod;
-        var result = {};
-        if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-        result["default"] = mod;
-        return result;
-    };
-
-    __importDefault = function (mod) {
-        return (mod && mod.__esModule) ? mod : { "default": mod };
-    };
-
-    __classPrivateFieldGet = function (receiver, privateMap) {
-        if (!privateMap.has(receiver)) {
-            throw new TypeError("attempted to get private field on non-instance");
-        }
-        return privateMap.get(receiver);
-    };
-
-    __classPrivateFieldSet = function (receiver, privateMap, value) {
-        if (!privateMap.has(receiver)) {
-            throw new TypeError("attempted to set private field on non-instance");
-        }
-        privateMap.set(receiver, value);
-        return value;
     }
+    return __assign.apply(this, arguments);
+}
 
-    exporter("__extends", __extends);
-    exporter("__assign", __assign);
-    exporter("__rest", __rest);
-    exporter("__decorate", __decorate);
-    exporter("__param", __param);
-    exporter("__metadata", __metadata);
-    exporter("__awaiter", __awaiter);
-    exporter("__generator", __generator);
-    exporter("__exportStar", __exportStar);
-    exporter("__values", __values);
-    exporter("__read", __read);
-    exporter("__spread", __spread);
-    exporter("__spreadArrays", __spreadArrays);
-    exporter("__await", __await);
-    exporter("__asyncGenerator", __asyncGenerator);
-    exporter("__asyncDelegator", __asyncDelegator);
-    exporter("__asyncValues", __asyncValues);
-    exporter("__makeTemplateObject", __makeTemplateObject);
-    exporter("__importStar", __importStar);
-    exporter("__importDefault", __importDefault);
-    exporter("__classPrivateFieldGet", __classPrivateFieldGet);
-    exporter("__classPrivateFieldSet", __classPrivateFieldSet);
-});
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+}
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+function __decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
 
-},{}],19:[function(require,module,exports){
+function __param(paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+}
+
+function __metadata(metadataKey, metadataValue) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+}
+
+function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
+
+function __exportStar(m, exports) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+
+function __values(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+}
+
+function __read(o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+}
+
+function __spread() {
+    for (var ar = [], i = 0; i < arguments.length; i++)
+        ar = ar.concat(__read(arguments[i]));
+    return ar;
+}
+
+function __spreadArrays() {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
+
+function __await(v) {
+    return this instanceof __await ? (this.v = v, this) : new __await(v);
+}
+
+function __asyncGenerator(thisArg, _arguments, generator) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+    function fulfill(value) { resume("next", value); }
+    function reject(value) { resume("throw", value); }
+    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+}
+
+function __asyncDelegator(o) {
+    var i, p;
+    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+}
+
+function __asyncValues(o) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var m = o[Symbol.asyncIterator], i;
+    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+}
+
+function __makeTemplateObject(cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+
+function __importStar(mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result.default = mod;
+    return result;
+}
+
+function __importDefault(mod) {
+    return (mod && mod.__esModule) ? mod : { default: mod };
+}
+
+function __classPrivateFieldGet(receiver, privateMap) {
+    if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to get private field on non-instance");
+    }
+    return privateMap.get(receiver);
+}
+
+function __classPrivateFieldSet(receiver, privateMap, value) {
+    if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to set private field on non-instance");
+    }
+    privateMap.set(receiver, value);
+    return value;
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/upper-case-first/dist.es2015/index.js":
+/*!************************************************************!*\
+  !*** ./node_modules/upper-case-first/dist.es2015/index.js ***!
+  \************************************************************/
+/*! exports provided: upperCaseFirst */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "upperCaseFirst", function() { return upperCaseFirst; });
 /**
  * Upper case the first character of an input string.
  */
 function upperCaseFirst(input) {
     return input.charAt(0).toUpperCase() + input.substr(1);
 }
-exports.upperCaseFirst = upperCaseFirst;
+//# sourceMappingURL=index.js.map
 
-},{}],20:[function(require,module,exports){
+/***/ }),
+
+/***/ "./node_modules/upper-case/dist.es2015/index.js":
+/*!******************************************************!*\
+  !*** ./node_modules/upper-case/dist.es2015/index.js ***!
+  \******************************************************/
+/*! exports provided: localeUpperCase, upperCase */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "localeUpperCase", function() { return localeUpperCase; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "upperCase", function() { return upperCase; });
 /**
  * Source: ftp://ftp.unicode.org/Public/UCD/latest/ucd/SpecialCasing.txt
  */
@@ -658,30 +961,40 @@ function localeUpperCase(str, locale) {
         return upperCase(str.replace(lang.regexp, function (m) { return lang.map[m]; }));
     return upperCase(str);
 }
-exports.localeUpperCase = localeUpperCase;
 /**
  * Upper case as a function.
  */
 function upperCase(str) {
     return str.toUpperCase();
 }
-exports.upperCase = upperCase;
+//# sourceMappingURL=index.js.map
 
-},{}],21:[function(require,module,exports){
+/***/ }),
+
+/***/ "./src/change-case.js":
+/*!****************************!*\
+  !*** ./src/change-case.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
-var changeCase = require("change-case");
-changeCase.titleCase = require("title-case").titleCase;
-changeCase.swapCase = require("swap-case").swapCase;
-changeCase.lowerCase = require("lower-case").lowerCase;
-changeCase.lowerCaseFirst = require("lower-case-first").lowerCaseFirst;
-changeCase.upperCase = require("upper-case").upperCase;
-changeCase.upperCaseFirst = require("upper-case-first").upperCaseFirst;
-changeCase.spongeCase = require("sponge-case").spongeCase;
 
-module.exports = changeCase;
+module.exports = {
+	...__webpack_require__(/*! change-case */ "./node_modules/change-case/dist.es2015/index.js"),
+	...__webpack_require__(/*! title-case */ "./node_modules/title-case/dist.es2015/index.js"),
+	...__webpack_require__(/*! swap-case */ "./node_modules/swap-case/dist.es2015/index.js"),
+	...__webpack_require__(/*! lower-case */ "./node_modules/lower-case/dist.es2015/index.js"),
+	...__webpack_require__(/*! lower-case-first */ "./node_modules/lower-case-first/dist.es2015/index.js"),
+	...__webpack_require__(/*! upper-case */ "./node_modules/upper-case/dist.es2015/index.js"),
+	...__webpack_require__(/*! upper-case-first */ "./node_modules/upper-case-first/dist.es2015/index.js"),
+	...__webpack_require__(/*! sponge-case */ "./node_modules/sponge-case/dist.es2015/index.js")
+};
 
-},{"change-case":3,"lower-case":8,"lower-case-first":7,"sponge-case":15,"swap-case":16,"title-case":17,"upper-case":20,"upper-case-first":19}]},{},[21])(21)
+
+/***/ })
+
+/******/ });
 });
-
 //# sourceMappingURL=change-case-bundled.js.map

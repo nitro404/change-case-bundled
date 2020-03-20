@@ -2,7 +2,7 @@
 
 global.utilities = undefined;
 
-const changeCaseBundled = require("../dist/change-case-bundled.js");
+const changeCaseBundled = require("../src/change-case.js");
 const changeCase = require("change-case");
 const utilities = require("extra-utilities");
 const chai = require("chai");
