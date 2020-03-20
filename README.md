@@ -41,7 +41,7 @@ npm install change-case-bundled
 
 To build the distribution files for this module:
 ```bash
-gulp build
+gulp browserify
 ```
 or
 ```bash
