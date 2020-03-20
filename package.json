@@ -2,12 +2,12 @@
   "name": "change-case-bundled",
   "version": "1.0.3",
   "description": "A browserify bundled web-friendly version of the change-case module.",
-  "main": "dist/change-case-bundled.min.js",
+  "main": "dist/change-case-bundled.js",
   "scripts": {
     "build": "gulp browserify",
     "lint": "gulp lint",
     "test": "mocha",
-    "coverage": "istanbul cover node_modules/mocha/bin/_mocha --require test/*.js",
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha --require test/**/*.js",
     "coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
