@@ -12,6 +12,10 @@
 
 A browserify bundled web-friendly version of the [change-case](https://github.com/blakeembrey/change-case) module with other case utilities included.
 
+## Documentation
+
+View the original documentation [here](https://github.com/blakeembrey/change-case).
+
 ## Web Usage
 
 ```html
