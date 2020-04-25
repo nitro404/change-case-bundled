@@ -10,9 +10,9 @@
 [![Contributors][contributors-image]][contributors-url]
 [![Pull Requests Welcome][pull-requests-image]][pull-requests-url]
 
-A browserify bundled web-friendly version of the [change-case](https://github.com/blakeembrey/change-case) module.
+A browserify bundled web-friendly version of the [change-case](https://github.com/blakeembrey/change-case) module with other case utilities included.
 
-## Client-Side Usage
+## Web Usage
 
 ```html
 <script src="change-case-bundled.min.js"></script>
@@ -22,12 +22,12 @@ A browserify bundled web-friendly version of the [change-case](https://github.co
 </script>
 ```
 
-## Server-Side Usage
+## Node.js Usage
 
 ```javascript
 const changeCase = require("change-case-bundled");
 
-changeCase.camelCase("Door Stuck"); // => "doorStuck"
+changeCase.pascalCase("Door Stuck"); // => "DoorStuck"
 ```
 
 ## Installation

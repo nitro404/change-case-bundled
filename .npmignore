@@ -7,8 +7,9 @@ coverage
 .coveralls.yml
 .travis.yml
 package-lock.json
+webpack.config.json
+webpack.config.*.json
 yarn.lock
 gulpfile.js
 LICENSE
-README.md
 CHANGELOG.md

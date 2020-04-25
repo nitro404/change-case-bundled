@@ -1,7 +1,5 @@
 "use strict";
 
-global.utilities = undefined;
-
 const changeCaseBundled = require("../src/change-case.js");
 const changeCase = require("change-case");
 const utilities = require("extra-utilities");
@@ -16,6 +14,8 @@ const expectedFunctionNames = [
 	"constantCase",
 	"dotCase",
 	"headerCase",
+	"isUpperCase",
+	"isLowerCase",
 	"lowerCase",
 	"lowerCaseFirst",
 	"noCase",

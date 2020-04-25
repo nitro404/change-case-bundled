@@ -295,6 +295,46 @@ function headerCase(input, options) {
 
 /***/ }),
 
+/***/ "./node_modules/is-lower-case/dist.es2015/index.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/is-lower-case/dist.es2015/index.js ***!
+  \*********************************************************/
+/*! exports provided: isLowerCase */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isLowerCase", function() { return isLowerCase; });
+/**
+ * Returns a boolean indicating whether the string is lower case.
+ */
+function isLowerCase(input) {
+    return input.toLowerCase() === input && input.toUpperCase() !== input;
+}
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/is-upper-case/dist.es2015/index.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/is-upper-case/dist.es2015/index.js ***!
+  \*********************************************************/
+/*! exports provided: isUpperCase */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isUpperCase", function() { return isUpperCase; });
+/**
+ * Returns a boolean indicating whether the string is upper case.
+ */
+function isUpperCase(input) {
+    return input.toUpperCase() === input && input.toLowerCase() !== input;
+}
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
 /***/ "./node_modules/lower-case-first/dist.es2015/index.js":
 /*!************************************************************!*\
   !*** ./node_modules/lower-case-first/dist.es2015/index.js ***!
@@ -985,6 +1025,8 @@ module.exports = {
 	...__webpack_require__(/*! change-case */ "./node_modules/change-case/dist.es2015/index.js"),
 	...__webpack_require__(/*! title-case */ "./node_modules/title-case/dist.es2015/index.js"),
 	...__webpack_require__(/*! swap-case */ "./node_modules/swap-case/dist.es2015/index.js"),
+	...__webpack_require__(/*! is-lower-case */ "./node_modules/is-lower-case/dist.es2015/index.js"),
+	...__webpack_require__(/*! is-upper-case */ "./node_modules/is-upper-case/dist.es2015/index.js"),
 	...__webpack_require__(/*! lower-case */ "./node_modules/lower-case/dist.es2015/index.js"),
 	...__webpack_require__(/*! lower-case-first */ "./node_modules/lower-case-first/dist.es2015/index.js"),
 	...__webpack_require__(/*! upper-case */ "./node_modules/upper-case/dist.es2015/index.js"),
